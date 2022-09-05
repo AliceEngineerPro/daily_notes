@@ -1,7 +1,8 @@
-.idea
+.idea/
 *.iml
 out
 gen
 
 # used add
 .vscode
+__pycache__/
