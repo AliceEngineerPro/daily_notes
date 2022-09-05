@@ -13,9 +13,8 @@ def add_url(url):
     def function(func):
         def wrapper(*args, **kwargs):
             func()
-            pass
 
-        route_dict[url] = func
+        route_dict[url] = wrapper
 
         return wrapper
 
