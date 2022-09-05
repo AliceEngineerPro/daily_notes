@@ -12,7 +12,7 @@ import p_wrapper
 @p_wrapper.RunTime
 def add_num():
     n = 0
-    for index in range(0, 100000000):
+    for index in range(0, 100):
         n += index
     return n
 
