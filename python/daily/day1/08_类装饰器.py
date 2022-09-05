@@ -7,16 +7,19 @@
 """
 
 
-class Wrapper:
-    
-    def __int__(self, func):
-        self.func= func
-    
+class Wrapper(object):
+
+    def __init__(self, func):
+        self.func = func
+
     def __call__(self, *args, **kwargs):
         print('类装饰器')
         self.func()
-        
-        
+
+
 @Wrapper
 def function():
     print('name')
+
+
+function()
