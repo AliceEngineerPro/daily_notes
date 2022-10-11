@@ -6,3 +6,4 @@ gen
 # used add
 .vscode
 __pycache__/
+venv/
