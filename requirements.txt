@@ -1,0 +1,9 @@
+beautifulsoup4==4.11.1
+pandas==1.5.0
+pymysql==1.0.2
+redis==4.3.4
+requests==2.28.1
+rich==12.6.0
+watchdog==2.1.9
+pypiwin32==223
+pywin32==304
