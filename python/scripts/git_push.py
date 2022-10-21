@@ -51,7 +51,7 @@ def auto_push():
 if __name__ == '__main__':
     while True:
         # auto_push()
-        time_delay = random.randint(1,10)
-        print(time_delay)
-        time.sleep(time_delay)
+        # time_delay = random.randint(1,10)
+        # print(time_delay)
+        # time.sleep(time_delay)
         print('done')
