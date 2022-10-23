@@ -43,3 +43,4 @@ mysql_ports=(3306)
 other_ports=()
 # 判断防火墙是否开启, 脚本初始化
 firewalld_state
+

@@ -3,13 +3,14 @@
 import pymysql
 import logging
 import json
+from typing import Any 
 
 logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s %(levelname)-8s: %(message)s',
                     )
 
 
-def connection():
+def connection() -> Any:
     """
     连接数据库
     :return:
@@ -27,7 +28,7 @@ def connection():
     return cur
 
 
-def del_tables(database: str):
+def del_tables(database: str) -> str:
     """
     删除一个数据库中的所有表
     :return:
@@ -54,7 +55,7 @@ def del_tables(database: str):
     return json.dumps(msg)
 
 
-def del_database(database: str):
+def del_database(database: str) -> str:
     """
     删除数据库
     :param database:
@@ -72,7 +73,7 @@ def del_database(database: str):
     return json.dumps(msg)
 
 
-def create_database(database: str):
+def create_database(database: str) -> str:
     """
     创建数据库
     :param database:
