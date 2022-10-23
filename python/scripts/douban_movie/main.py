@@ -10,7 +10,6 @@ import test
 
 if __name__ == '__main__':
     # test.MoviesDouban().get_movies()
-    test.MoviesDouban().test()
-    
+    test.MoviesDouban.test()
 
 
