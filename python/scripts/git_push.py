@@ -30,12 +30,12 @@ def auto_push():
         data_date = f'{datetime.today().year}-{datetime.today().month}-{datetime.today().day}'
         data_time = f'{datetime.today().hour}:{datetime.today().minute}:{datetime.today().second}'
         with open(
-                file=f'{auto_path}/{data_date}.log',
+                file=f'{auto_path}/{data_date}.py',
                 mode='a',
                 encoding='utf-8'
         ) as file:
             logging.info(file.name)
-            file.write(f'AutoCommitDateTime: {time.asctime()}')
+            file.write(f'print(f"AutoCommitDateTime: {time.asctime()}")')
             file.write('\n')
         file.close()
         repo = Repo(path=repo_path)

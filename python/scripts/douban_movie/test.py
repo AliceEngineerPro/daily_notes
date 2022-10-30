@@ -8,8 +8,9 @@
 
 import requests
 import json
-from bs4 import BeautifulStoneSoup
 from lxml import etree
+import time
+import fake_useragent
 
 
 class MoviesDouban(object):
@@ -22,63 +23,64 @@ class MoviesDouban(object):
             'http': 'http://127.0.0.1:56789',
             'https': 'http://127.0.0.1:56789'
         }
-        self.page_number = []
-        self.cookies = 'll="118318"; bid=hldy-SvyXH8; ap_v=0,6.0'
 
-    def start_number(self) -> None:
-        for number in range(0, 100, 20):
-            self.page_number.append(number)
-
-    def get_movies(self) -> None:
-        request_url = f'https://m.douban.com/rexxar/api/v2/movie/recommend?'
-        for start_number in range(0, 21, 20):
-            params = {
-                'refresh': '0',
-                'start': start_number,
-                'count': '20',
-                'selected_categories': {},
-                'uncollect': False,
-                'playable': True,
-                'tags': None
-            }
-            response = requests.request(
-                method='GET',
-                url=request_url,
-                params=params,
-                headers=self.headers,
-                cookies={cookie.split('=')[0]: cookie.split('=')[1] for cookie in self.cookies.split('; ')},
-                proxies=self.proxies,
-            )
-            print(response.content.decode())
-
-    def get_hot_movies(self) -> list:
-        url_list: list = []
+    def get_hot_movies(self):
+        # url_list: list = []
         for number in range(0, 351, 50):
             request_url = f'https://movie.douban.com/j/search_subjects?type=movie&tag=%E7%83%AD%E9%97%A8&page_limit=50&page_start={number}'
-            response = requests.get(url=request_url, headers=self.headers)
+            # request_url = f'https://movie.douban.com/j/search_subjects?type=movie&tag=%E7%83%AD%E9%97%A8&page_limit=5&page_start=193'
+            response = requests.get(url=request_url, headers=self.headers, proxies=self.proxies)
             response_dict = json.loads(response.content.decode())
             for data in response_dict.get('subjects'):
-                for data_key, data_value in data.items():
-                    if data_key == 'url':
-                        url_list.append(data_value)
-            #     break
-            # break
-        return url_list
+                # url_list.append(data['url'])
+                detailed_hot_movie_response = requests.request(
+                    method='GET',
+                    url=data['url'],
+                    # url='https://movie.douban.com/subject/35608160/',
+                    headers=self.headers,
+                )
+                parse_html = etree.HTML(detailed_hot_movie_response.content.decode())
+                detailed_hot_movie_name = parse_html.xpath('//span[@property="v:itemreviewed"]/text()')
+                detailed_hot_movie_director = parse_html.xpath('//span[@class="attrs"]/a[@rel="v:directedBy"]/text()')
+                # print(url_hot_movie)
+                # print(detailed_hot_movie_name, detailed_hot_movie_director)
+                print(data['url'])
+                print(f'电影: {detailed_hot_movie_name[0]} 导演是: {detailed_hot_movie_director[0]}')
+                time.sleep(1)
+                
+                # for data_key, data_value in data.items():
+                    # if data_key == 'url':
+                    #     init_num += 1
+                    #     url_list.append(data_value)
+        # return url_list
+        # return init_num
 
     @classmethod
     def detailed_hot_movies(cls):
+        print(cls().get_hot_movies())
         for url_hot_movie in cls().get_hot_movies():
             detailed_hot_movie_response = requests.request(
                 method='GET',
                 url=url_hot_movie,
+                # url='https://movie.douban.com/subject/35608160/',
                 headers=cls().headers,
             )
             parse_html = etree.HTML(detailed_hot_movie_response.content.decode())
             detailed_hot_movie_name = parse_html.xpath('//span[@property="v:itemreviewed"]/text()')
             detailed_hot_movie_director = parse_html.xpath('//span[@class="attrs"]/a[@rel="v:directedBy"]/text()')
-            
-            # print(detailed_hot_movie_name, type(detailed_hot_movie_name))
+            # print(url_hot_movie)
+            print(detailed_hot_movie_name, detailed_hot_movie_director)
             print(f'电影: {detailed_hot_movie_name[0]} 导演是: {detailed_hot_movie_director[0]}')
 
 
 
+class FakeUserAgentTest(object):
+    
+    def __index__(self):
+        # fake_useragent.UserAgent.update()
+        pass
+    
+    @ staticmethod
+    def get_random_user_agent():
+        for _ in range(101):
+            print(fake_useragent.UserAgent().random)
