@@ -1,0 +1,26 @@
+# @File: TomatoToDoConfig.yaml
+# @Author: Alice(From Chengdu.China)
+# @HomePage: https://github.com/AliceEngineerPro
+# @CreatedTime: 2022/11/2 22:11
+
+mysql:
+  host: 'host'
+  port: 12345
+  user: 'username'
+  password: 'password'
+  database: 'database'
+  charset: 'utf8'
+Timing:
+  todo_1:
+    HMS: '08:00'
+    traffic: '0.80'
+    nodes_id: (6)
+  todo_2:
+    HMS: '17:00'
+    traffic: '3.00'
+    nodes_id: (1, 2)
+  todo_3:
+    HMS: '21:00'
+    traffic: '1.50'
+    nodes_id: (1, 2, 3, 6)
+  
