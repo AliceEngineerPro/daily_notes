@@ -1,6 +1,6 @@
 # coding: utf8
 """ 
-@File: git_push.py
+@File: GitAutoPush.py
 @Author: Alice(From Chengdu.China)
 @HomePage: https://github.com/AliceEngineerPro
 @CreatedTime: 2022/10/14 18:34
