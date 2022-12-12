@@ -1,0 +1,28 @@
+Cartopy @ file:///C:/ci/cartopy_1613152141732/work
+certifi==2022.9.24
+cftime==1.6.2
+colorama==0.4.6
+cycler @ file:///home/conda/feedstock_root/build_artifacts/cycler_1635519461629/work
+Cython==0.29.32
+easydict==1.10
+fonttools==4.25.0
+kiwisolver @ file:///D:/bld/kiwisolver_1657953200729/work
+matplotlib @ file:///D:/bld/matplotlib-suite_1660353846959/work
+munkres==1.1.4
+netCDF4==1.6.2
+numpy @ file:///D:/bld/numpy_1651020773031/work
+packaging @ file:///home/conda/feedstock_root/build_artifacts/packaging_1637239678211/work
+pandas==1.5.1
+Pillow==9.2.0
+pycwr==0.3.4
+pyparsing @ file:///home/conda/feedstock_root/build_artifacts/pyparsing_1652235407899/work
+pyproj==3.4.0
+pyshp @ file:///home/conda/feedstock_root/build_artifacts/pyshp_1659002966020/work
+python-dateutil @ file:///home/conda/feedstock_root/build_artifacts/python-dateutil_1626286286081/work
+pytz==2022.6
+scipy @ file:///C:/bld/scipy_1658811088396/work
+Shapely==1.8.4
+six @ file:///home/conda/feedstock_root/build_artifacts/six_1620240208055/work
+tqdm==4.64.1
+wincertstore==0.2
+xarray==2022.11.0
