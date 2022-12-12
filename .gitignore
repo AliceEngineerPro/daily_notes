@@ -7,7 +7,7 @@ gen
 .vscode
 __pycache__/
 venv/
-python/scripts/temp/tomato/TomatoToDo/
+python/scripts/Temp/tomato/TomatoToDo/
 *.tar
 *.tar.gz
 

@@ -1,6 +1,6 @@
 # coding: utf8
 """
-@File: radar_AR2_unzip.py
+@File: AR2RadarUnzip.py
 @Author: Alice(From Chengdu.China)
 @HomePage: https://github.com/AliceEngineerPro
 @CreatedTime: 2022/11/21 14:26
