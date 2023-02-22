@@ -20,7 +20,9 @@ try:
         x, y = pag.position()
         print("Screen size: (%s %s),  Position : (%s, %s)\n" % (screenWidth, screenHeight, x, y))  # 打印坐标
 
-        time.sleep(1)
+        time.sleep(0.1)
         os.system('cls')
 except KeyboardInterrupt:
     print('end')
+    
+
