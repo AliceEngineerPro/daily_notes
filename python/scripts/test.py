@@ -12,17 +12,26 @@
 import os
 import time
 import pyautogui as pag
+import win32gui
 
-try:
-    while True:
-        print("Press Ctrl-C to end")
-        screenWidth, screenHeight = pag.size()
-        x, y = pag.position()
-        print("Screen size: (%s %s),  Position : (%s, %s)\n" % (screenWidth, screenHeight, x, y))  # 打印坐标
+# try:
+#     while True:
+#         print("Press Ctrl-C to end")
+#         screenWidth, screenHeight = pag.size()
+#         x, y = pag.position()
+#         print("Screen size: (%s %s),  Position : (%s, %s)\n" % (screenWidth, screenHeight, x, y))  # 打印坐标
+# 
+#         time.sleep(1)
+#         os.system('cls')
+# except KeyboardInterrupt:
+#     print('end')
 
+<<<<<<< Updated upstream
         time.sleep(0.1)
         os.system('cls')
 except KeyboardInterrupt:
     print('end')
     
 
+=======
+>>>>>>> Stashed changes
