@@ -28,30 +28,30 @@ if __name__ == '__main__':
         print('10秒后进行操作...')
         time.sleep(10)
         # 操作
-        pyautogui.click(24, 634)
+        pyautogui.click(27, 620)
         time.sleep(0.1)
         # 分析
-        pyautogui.click(71, 684)
+        pyautogui.click(58, 664)
         time.sleep(0.1)
         # 年
-        pyautogui.doubleClick(183, 761)
+        pyautogui.doubleClick(193, 747)
         pyautogui.typewrite('{}'.format(Y))
         # 月
-        pyautogui.doubleClick(248, 765)
+        pyautogui.doubleClick(244, 748)
         pyautogui.typewrite('{}'.format(M))
         # 日
-        pyautogui.doubleClick(283, 765)
+        pyautogui.doubleClick(286, 747)
         pyautogui.typewrite('{}'.format(D))
         # 时
-        pyautogui.doubleClick(196, 783)
+        pyautogui.doubleClick(197, 772)
         pyautogui.typewrite('{}'.format(H))
         # 分
-        pyautogui.doubleClick(241, 788)
+        pyautogui.doubleClick(247, 770)
         pyautogui.typewrite('{}'.format(m))
         # 秒
-        pyautogui.doubleClick(283, 787)
+        pyautogui.doubleClick(283, 773)
         pyautogui.typewrite('00')
         # 运行
-        pyautogui.click(206, 826)
+        pyautogui.click(220, 811)
         for _ in tqdm(range(1, 3601)):
             time.sleep(1)
