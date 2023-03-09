@@ -13,19 +13,11 @@ import os
 import sys
 import subprocess
 
-# subprocess
+
 def subprocess_run():
-    py = subprocess.Popen(['python'], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-    py.stdin.write(b'print(1) \n')
-    out, err = py.communicate()
-    print(out, type(out))
-    s_out = bytes.decode(out)
-    print(s_out, type(s_out))
-    print(err, type(err))
-    
-    
+    s = subprocess.run('python --version')
+    print(s.returncode)
+
+
 if __name__ == '__main__':
     subprocess_run()
-
-
-

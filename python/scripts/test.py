@@ -26,12 +26,3 @@ import win32gui
 # except KeyboardInterrupt:
 #     print('end')
 
-<<<<<<< Updated upstream
-        time.sleep(0.1)
-        os.system('cls')
-except KeyboardInterrupt:
-    print('end')
-    
-
-=======
->>>>>>> Stashed changes
